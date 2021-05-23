@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "ProbaPro-ExtraLight";
+  src: url("./fonts/ProbaPro-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ProbaPro-Light";
+  src: url("./fonts/ProbaPro-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ProbaPro-Regular";
+  src: url("./fonts/ProbaPro-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ProbaPro-Medium";
+  src: url("./fonts/ProbaPro-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ProbaPro-SemiBold";
+  src: url("./fonts/ProbaPro-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ProbaPro-Bold";
+  src: url("./fonts/ProbaPro-Bold.ttf") format("truetype");
+}
+.nav {
+  padding-left: 15%;
+  color: #868686;
+  font-family: "ProbaPro-Regular";
+  font-size: 0.8vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+.title {
+  font-family: "ProbaPro-Regular";
+  padding-left: 33%;
+  color: #333333;
+  text-transform: uppercase;
+  font-size: 1.5vw;
+}
+
+.digits {
+  padding-left: 33%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 15%;
+  font-family: "ProbaPro-Regular";
+  margin-top: 1vw;
+  color: #979493;
+  font-size: 1vw;
+}
+.digits span {
+  color: #DCAB96;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+.main .filter {
+  width: 24%;
+  background-color: white;
+  display: inline-block;
+  height: auto;
+}
+.main .filter .filter__price .filter__price-form {
+  display: flex;
+}
+.main .filter .filter__price .filter__price-form .filter__price-form-from {
+  width: 50%;
+}
+.main .filter .filter__price .filter__price-form .filter__price-form-from input {
+  width: 100%;
+}
+.main .filter .filter__price .filter__price-form .filter__price-form-to {
+  width: 50%;
+}
+.main .filter .filter__price .filter__price-form .filter__price-form-to input {
+  width: 100%;
+}
+.main .filter .filter__price .filter__price-bar input {
+  width: 100%;
+}
+.main .filter .filter__category .filter__category-body .filter__category-body__item {
+  display: flex;
+  justify-content: space-between;
+}
+.main .filter .filter__category .filter__category-body .filter__category-body__item .item-title {
+  display: flex;
+}
+.main .filter .filter__color .filter__color-body .filter__color-body__item {
+  display: flex;
+  justify-content: space-between;
+}
+.main .filter .filter__color .filter__color-body .filter__color-body__item .item-title {
+  display: flex;
+}
+.main .filter .filter__size .filter__size-body .filter__size-body__item {
+  display: flex;
+  justify-content: space-between;
+}
+.main .filter .filter__size .filter__size-body .filter__size-body__item .item-title {
+  display: flex;
+}
+.main .filter .filter__brand .filter__brand-body .filter__brand-body__item {
+  display: flex;
+  justify-content: space-between;
+}
+.main .filter .filter__brand .filter__brand-body .filter__brand-body__item .item-title {
+  display: flex;
+}
+.main .catalog {
+  width: 75.1%;
+}
+
+/*# sourceMappingURL=catalog.css.map */

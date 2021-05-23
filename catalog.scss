@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'ProbaPro-ExtraLight'; 
+    src: url("./fonts/ProbaPro-ExtraLight.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Light'; 
+    src: url("./fonts/ProbaPro-Light.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Regular'; 
+    src: url("./fonts/ProbaPro-Regular.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Medium'; 
+    src: url("./fonts/ProbaPro-Medium.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-SemiBold'; 
+    src: url("./fonts/ProbaPro-SemiBold.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Bold'; 
+    src: url("./fonts/ProbaPro-Bold.ttf") format("truetype"); 
+}
+
+$main:#DCAB96;
+$background:#FBF6F3;
+$textlight:#868686;
+$textdefault:#333333;
+$textlight2:#979493;
+.nav{
+    padding-left: 15%;
+    color: $textlight;
+    font-family: 'ProbaPro-Regular';
+    font-size: 0.8vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.title{
+    font-family: 'ProbaPro-Regular';
+    padding-left:33%;
+    color: $textdefault;
+    text-transform: uppercase;
+    font-size: 1.5vw;
+}
+
+.digits{
+    padding-left: 33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15%;
+    font-family: 'ProbaPro-Regular';
+    margin-top:1vw;
+    color: $textlight2;
+    font-size: 1vw;
+    span{
+        color: $main;
+    }
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    
+    .filter{
+        width: 24%;
+        background-color: white;
+        display: inline-block;
+        height: auto;
+        .filter__price{
+            .filter__price-form{
+                display: flex;
+                .filter__price-form-from{
+                    width: 50%;
+                    input{
+                        width: 100%;
+                    }
+                }
+                .filter__price-form-to{
+                    width: 50%;
+                    input{
+                        width: 100%;
+                    }
+                }
+            }
+            .filter__price-bar{
+                input{
+                    width: 100%;
+                }
+            }
+        }
+        .filter__category{
+            .filter__category-body{
+                .filter__category-body__item{
+                    display: flex;
+                    justify-content: space-between;
+                    .item-title{
+                        display: flex;
+                    }
+                }
+            }   
+        }
+        .filter__color{
+            .filter__color-body{
+                .filter__color-body__item{
+                    display: flex;
+                    justify-content: space-between;
+                    .item-title{
+                        display: flex;
+                    }
+                }
+            }  
+        }
+        .filter__size{
+            .filter__size-body{
+                .filter__size-body__item{
+                    display: flex;
+                    justify-content: space-between;
+                    .item-title{
+                        display: flex;
+                    }
+                }
+            }  
+        }
+        .filter__brand{
+            .filter__brand-body{
+                .filter__brand-body__item{
+                    display: flex;
+                    justify-content: space-between;
+                    .item-title{
+                        display: flex;
+                    }
+                }
+            }  
+        }
+    }
+    .catalog{
+        width: 75.1%;
+    }
+}
+
+

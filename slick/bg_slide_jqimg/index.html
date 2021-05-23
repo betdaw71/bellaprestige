@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Плавная смена фона с использованием jQuery</title>
+<style>
+html {
+    min-height: 100%
+    }
+body {
+    min-height: 100%;
+	margin:0;
+	padding:0;
+	font: 15px Tahoma;
+	color:#555;
+    }
+#top{
+	width:100%;
+	background: #222;
+	text-align:center;
+	height:35px;
+	line-height:35px;
+	}
+#top a{color:#00FF00;text-decoration:none;}
+.logo{
+	width:200px;
+	font: 22px/125% Tahoma;
+	float:left;
+	line-height:35px;
+	}
+.logo span{font: 12px/125% Tahoma;}
+.main{color:#fff;max-width:600px;margin:0 auto;}
+
+
+
+/* Фон формы авторизации */
+ 
+.bg-grad{
+position: fixed;
+z-index:-1;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+opacity: 0;
+-webkit-transition: opacity 1s linear;
+transition: opacity 1s linear;
+background: #f17009;
+}
+.bg-grad:after{
+position: fixed;
+width:100%;
+height:100%;
+top:0px;
+left:0px; 
+content: '';
+background: transparent url(images/pattern.png) repeat top left;}
+ 
+.bg-grad.active{
+opacity: 1;
+}
+ 
+.bg-grad.one{
+background: url(images/1.jpg) no-repeat;
+background-size:cover;
+-webkit-background-size:cover;
+}
+ 
+.bg-grad.two{
+background: url(images/2.jpg) no-repeat;
+background-size:cover;
+-webkit-background-size:cover;
+}
+
+.bg-grad.three{
+background: url(images/3.jpg) no-repeat;
+background-size:cover;
+-webkit-background-size:cover;}
+
+</style>
+
+</head>
+<body>
+
+<div class="bg-wrapper">
+<div class="bg-grad one active"></div>
+<div class="bg-grad two"></div>
+<div class="bg-grad three"></div>
+</div>
+
+<div class="main">
+<h1>Плавная смена фона с использованием jQuery</h1>
+<h2>Смена фона происходит в течении 5 сек на следующий</h2>
+
+<p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquam, lectus in euismod tempus, ante libero hendrerit arcu, et interdum diam velit sed nisi. Suspendisse hendrerit est et arcu placerat, ut rutrum velit semper. Integer vitae varius ligula. Aenean id dolor luctus, posuere mi sed, sodales sapien. Ut sed diam a neque pharetra imperdiet quis ut purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer leo ipsum, eleifend sed orci eu, vulputate lacinia dolor. Pellentesque mollis ipsum eget nibh feugiat auctor. Duis condimentum iaculis eros eu maximus. Etiam ultricies tortor eu sem accumsan placerat.</p>
+
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+var transTime = 5000;
+var numBgColors = $('.bg-grad').length;
+var bgtrans = setInterval(function(){
+if($('.bg-grad.active').index() == ($('.bg-grad').length-1)){
+$('.bg-grad.active').removeClass('active');
+$('.bg-grad').eq(0).addClass('active');
+}else{
+var curIndex = $('.bg-grad.active').index();
+$('.bg-grad.active').removeClass('active');
+$('.bg-grad').eq(curIndex+1).addClass('active');
+}
+},transTime);
+});
+</script>
+</body>
+</html>
