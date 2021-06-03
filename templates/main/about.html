@@ -1,0 +1,45 @@
+
+        {% extends 'base.html' %}
+        {% load static %}
+        
+        {% block static %}
+        <link rel="stylesheet" href="{% static 'requisites.css'%}">
+        <link rel="stylesheet" href="{% static 'about.css'%}">
+        {% endblock %}
+        
+        {% block content %}
+
+
+        <div class="nav">Главная — Информация — О нас
+        </div>
+        <div class="title">О нас
+        </div>
+
+        <div class="body-help">
+            <div class="help_side">
+                <a href="{% url 'about' %}"><div class="help_side-item active">О кампании</div></a>
+                <a href="{% url 'advantage' %}"><div class="help_side-item">Преимущества</div></a>
+                <a href="{% url 'ytp' %}"><div class="help_side-item ">Уникальное торговое предложение (УТП)</div></a>
+                <a href="{% url 'contact' %}"><div class="help_side-item ">Контакты</div></a>
+                <a href="{% url 'opt' %}"><div class="help_side-item ">Оптовикам</div></a>
+            </div>
+            <div class="help_body" style="font-family: 'ProbaPro-Regular'; color: #868686;font-size: 1vw;margin-bottom: 10vw;">
+
+               
+                FASHION CONTINENT (АО «Модный Континент») – это динамично развивающаяся компания, которая с момента создания в 2003 году построила одну из крупнейших федеральных сетей модной женской одежды, белья и аксессуаров в России – INCITY, в настоящий момент насчитывающая свыше 280 торговых точек в более чем в 140 городах России.
+                <br> <br>Наша миссия: «Делать моду доступной для наших покупательниц».
+                
+                <br> <br>INCITY - мода большого города!
+                
+                <br> <br>Наши дизайнеры вкладывают свою любовь и заботу о вас в каждую коллекцию! Мы каждый день проходим мимо вас, обедаем в том же кафе, читаем те же книги, смотрим те же фильмы, также заботимся о близких и родных, поэтому точно знаем, что вам нужно. INCITY - чувствуем город, чувствуем Вас!
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+        {% endblock %}

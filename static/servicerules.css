@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'ProbaPro-ExtraLight'; 
+    src: url("./fonts/ProbaPro-ExtraLight.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Light'; 
+    src: url("./fonts/ProbaPro-Light.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Regular'; 
+    src: url("./fonts/ProbaPro-Regular.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Medium'; 
+    src: url("./fonts/ProbaPro-Medium.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-SemiBold'; 
+    src: url("./fonts/ProbaPro-SemiBold.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Bold'; 
+    src: url("./fonts/ProbaPro-Bold.ttf") format("truetype"); 
+}
+
+.nav{
+    padding-left: 15%;
+    color: #868686;
+    font-family: 'ProbaPro-Regular';
+    font-size: 0.8vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+.servicerules{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.servicerules__title{
+    font-family: 'ProbaPro-Regular';
+    /* padding-left:33%; */
+    color: #333333;
+    text-transform: uppercase;
+    font-size: 1.5vw;
+}
+.servicerules__body{
+    padding-left: 15%;
+    margin-top: 2vw;
+}
+.servicerules__body-description{
+    font-size: 1.1vw;
+    font-family: 'ProbaPro-Regular';
+    margin-bottom: 2vw;
+}
+.servicerules__body-description span{
+    display: block;
+    margin-top: 1vw;
+    font-family: 'ProbaPro-ExtraLight'; 
+    font-size: 1vw;
+}
+.servicerules__body-wrapper{
+
+}
+.servicerules__body-item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+}
+.servicerules__body-item-title{
+    width: 15%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: 'ProbaPro-Regular';
+    font-size: 1.1vw;
+}
+.servicerules__body-item-body{
+    width: 85%;
+    font-family: 'ProbaPro-ExtraLight';
+    font-size: 1vw;
+}
+.servicerules__under{
+    font-family: 'ProbaPro-Light';
+    font-size: 1.2vw;
+    margin-bottom: 3vw;
+}

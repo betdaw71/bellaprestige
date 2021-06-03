@@ -1,0 +1,159 @@
+
+    {% extends 'base.html' %}
+    {% load static %}
+    
+    {% block static %}
+    <link rel="stylesheet" href="{% static 'requisites.css'%}">
+    <link rel="stylesheet" href="{% static 'contact.css'%}">
+
+    {% endblock %}
+    
+    {% block content %}
+
+
+
+        <div class="nav">Главная — Информация — Контакты
+        </div>
+        <div class="title">Контакты
+        </div>
+
+
+        <div class="contact-form">
+            <div class="contact-form-inner">
+                <div class="contact-form__wrapper">
+                    <div class="contact-form-close"><img src="img/close_basket.svg" alt=""></div>
+                
+                    <div class="contact-form-body">
+                        <div class="contact-form__input">
+                            <div><label for="">Ваше имя</label></div>
+                            <input type="text">
+                        </div>
+                        <div class="contact-form__input">
+                            <div><label for="">Телефон </label></div>
+                            <input type="text">
+                        </div>
+                        <div class="contact-form__input">
+                            <div><label for="">E-mail</label></div>
+                            <input type="text">
+                        </div>
+                        <div class="contact-form__input">
+                            <div><label for="">Ваш вопрос</label></div>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="contact-form__submit">
+                            <input type="submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body-help">
+            <div class="help_side">
+                <a href="{% url 'about' %}"><div class="help_side-item ">О кампании</div></a>
+                <a href="{% url 'advantage' %}"><div class="help_side-item ">Преимущества</div></a>
+                <a href="{% url 'ytp' %}"><div class="help_side-item ">Уникальное торговое предложение (УТП)</div></a>
+                <a href="{% url 'contact' %}"><div class="help_side-item active">Контакты</div></a>
+                <a href="{% url 'opt' %}"><div class="help_side-item ">Оптовикам</div></a>
+            </div>
+            <div class="help_body">
+                <div id="map" style="width:100%;height:15vw"></div>
+
+                <div class="contact-body">
+                    <div class="contact-body__main">
+                        <div class="contact-body__main-item">
+                            <div class="contact-body__main-item-title">
+                                АДРЕС
+                            </div>
+                            <div class="contact-body__main-item-body">
+                                Офис Incity - Москва, наб. Тараса Шевченко, д. 23 А 
+                            </div>
+                        </div>
+                        <div class="contact-body__main-item">
+                            <div class="contact-body__main-item-title">
+                                ТЕЛЕФОН
+                            </div>
+                            <div class="contact-body__main-item-body">
+                                8 800 100-29-99
+
+                            </div>
+                        </div>
+                        <div class="contact-body__main-item">
+                            <div class="contact-body__main-item-title">
+                                E-MAIL
+
+                            </div>
+                            <div class="contact-body__main-item-body">
+                                info@bellaprestige.ru
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="contact-body-social">
+                        <div class="contact-body-social__item"><a href=""><img src="{% static 'img/vk.png' %}" alt=""></a></div>
+                        <div class="contact-body-social__item"><a href=""><img src="{% static 'img/facebook.png' %}" alt=""></a></div>
+                        <div class="contact-body-social__item"><a href=""><img src="{% static 'img/instagram_footer.png' %}" alt=""></a></div>
+                    </div>
+                    <div class="contact-body__under">
+                        Если Вы являетесь нашим партнером, или хотите им стать, и у вас возникли сложности в коммуникации с нашей компанией – напишите нам: info@incity.ru
+                    </div>
+                    <div class="contact-body__btn">
+                        <div class="contact-body__btn-wrapper">
+                            Напишите нам
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        {% endblock %}
+        {% block script %}
+
+        <script type="text/javascript">
+            ymaps.ready(init);
+ 
+             function init() {
+                 var myMap = new ymaps.Map("map", {
+                         center: [55.73, 37.75],
+                         zoom: 9,
+                         controls: ['zoomControl']
+                     }, {
+                         searchControlProvider: 'yandex#search'
+                     }),
+                     yellowCollection = new ymaps.GeoObjectCollection(null, {
+                         preset: 'islands#yellowIcon'
+                     }),
+                     blueCollection = new ymaps.GeoObjectCollection(null, {
+                         preset: 'islands#blueIcon'
+                     }),
+                     yellowCoords = [[55.73, 37.75], [55.81, 37.75]],
+                     blueCoords = [[55.73, 37.65], [55.81, 37.65]];
+ 
+                 for (var i = 0, l = yellowCoords.length; i < l; i++) {
+                     yellowCollection.add(new ymaps.Placemark(yellowCoords[i]));
+                 }
+                 for (var i = 0, l = blueCoords.length; i < l; i++) {
+                     blueCollection.add(new ymaps.Placemark(blueCoords[i]));
+                 }
+ 
+                 myMap.geoObjects.add(yellowCollection).add(blueCollection);
+ 
+                 // Через коллекции можно подписываться на события дочерних элементов.
+                 yellowCollection.events.add('click', function () { alert('Кликнули по желтой метке') });
+                 blueCollection.events.add('click', function () { alert('Кликнули по синей метке') });
+ 
+                 // Через коллекции можно задавать опции дочерним элементам.
+                 blueCollection.options.set('preset', 'islands#blueDotIcon');
+             }
+ 
+         </script>
+         <script>
+             $('.contact-body__btn-wrapper').click(function(){
+                 $('.contact-form').fadeIn('fast');
+             });
+             $('body').on('click','.contact-form-close',function(){
+                 $('.contact-form').fadeOut('fast');
+             });
+         </script>
+        {% endblock %}

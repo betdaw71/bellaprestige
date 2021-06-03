@@ -1,0 +1,254 @@
+{% load static %}
+<html>
+    <head>
+        <title>Главная</title>
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+        {% block static %}
+        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
+        
+    </head>
+    <body>
+        <div class="header_over">
+            <div class="header__top">
+                <div class="header__logo">
+                    <div class="header__logo-burber"><img src="{% static 'img/burger.svg' %}" alt=""></div>
+                    <div class="header__logo-img"><a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
+                    <div class="header__logo-description">Интернет-магазин<br>нижнего белья</div>
+                </div>
+                <div class="header__category">
+                    <div class="header__category-item">100% ХЛОПОК</div>
+                    <div class="header__category-item">ОДЕЖДА</div>
+                    <div class="header__category-item">ОБУВЬ</div>
+                    <div class="header__category-item">АКСЕССУАРЫ</div>
+                    <div class="header__category-item">НИЖНЕЕ БЕЛЬЕ</div>
+                    <div class="header__category-item">ОДЕЖДА ДЛЯ ДОМА</div>
+                </div>
+                <div class="header__tools">
+                    <div class="header__tools-phone">
+                        <a href="tel:"><img src="{% static 'img/phone.svg' %}" alt=""></a>
+                    </div>
+                    <div class="header__tools-search">
+                        <img src="{% static 'img/search.svg' %}" alt="">
+                    </div>
+                    <div class="header__tools-account">
+                        {% if user.is_authenticated %}
+                        <img src="{% static 'img/account.svg' %}" alt="">
+                        <div class="account__under">
+                            <div class="account__under-wrapper">
+                                <div class="account__under-item"><a href="">Выйти</a></div>
+                                <div class="account__under-item"><a href="">Выйти</a></div>
+                                <div class="account__under-item"><a href="">Выйти</a></div>
+                                <div class="account__under-item"><a href="">Выйти</a></div>
+                                <div class="account__under-item"><a href="">Выйти</a></div>
+                            </div>
+                        </div>
+                        {% else %}
+                        <a href="login"><img src="{% static 'img/account.svg' %}" alt=""></a>
+                        {% endif %}
+                    </div>
+                    <div class="header__tools-like">
+                        <div class="count-num">0</div>
+                        <img src="{% static 'img/like.svg' %}" alt="">
+                    </div>
+                    <div class="header__tools-cart">
+                        <div class="count-num">0</div>
+                        <img src="{% static 'img/cart.svg' %}" alt="">
+                        <div class="cart__wrapper">
+                            <div class="cart__wrapper-body">
+                                <div class="cart__items">
+                                
+                                </div>
+                                <div class="cart_sum">
+                                    <div class="cart_sum-clear">
+                                        <div class="cart_sum-clear__cencel"><img src="{% static 'img/clear_basket.svg' %}" alt=""></div>
+                                        <div class="cart_sum-clear__text">Очистить корзину</div>
+                                    </div>
+                                    <div class="cart_sum-sum">
+                                        Итого <span>0 руб.</span>
+                                    </div>
+                                </div>
+                                <div class="cart_all">
+                                    <div class="cart_all-wrapper">
+                                    <a href="">ПЕРЕЙТИ В КОРЗИНУ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="header__top">
+                <div class="header__logo">
+                    <div class="header__logo-img"><a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
+                    <div class="header__logo-description">Интернет-магазин<br>нижнего белья</div>
+                </div>
+                <div class="header__phone">
+                    <div class="header__phone-logo"><img src="{% static 'img/call.svg' %}" alt=""></div>
+                    <div class="header__phone-number"><a href="tel:">8 800 100-29-99</a></div>
+                </div>
+                <div class="header__tools">
+                    <div class="header__tools-search">
+                        <img src="{% static 'img/search.svg' %}" alt="">
+                    </div>
+                    <div class="header__tools-account">
+                        
+                        {% if user.is_authenticated %}
+                        <img src="{% static 'img/account.svg' %}" alt="">
+                        <div class="account__under">
+                            <div class="account__under-wrapper">
+                                <div class="account__under-item"><a href="">Выйти</a></div>
+                                <div class="account__under-item"><a href="">Выйти</a></div>
+                                <div class="account__under-item"><a href="">Выйти</a></div>
+                                <div class="account__under-item"><a href="">Выйти</a></div>
+                                <div class="account__under-item"><a href="">Выйти</a></div>
+                            </div>
+                        </div>
+                        {% else %}
+                        <a href="login"><img src="{% static 'img/account.svg' %}" alt=""></a>
+                        {% endif %}
+                    </div>
+                    <div class="header__tools-like">
+                        <div class="count-num">0</div>
+                        <img src="{% static 'img/like.svg' %}" alt="">
+                    </div>
+                    <div class="header__tools-cart">
+                        <div class="count-num">0</div>
+                        <img src="{% static 'img/cart.svg' %}" alt="">
+                        <div class="cart__wrapper">
+                            <div class="cart__wrapper-body">
+                                <div class="cart__items">
+                                    
+                                </div>
+                                <div class="cart_sum">
+                                    <div class="cart_sum-clear">
+                                        <div class="cart_sum-clear__cencel"><img src="{% static 'img/clear_basket.svg' %}" alt=""></div>
+                                        <div class="cart_sum-clear__text">Очистить корзину</div>
+                                    </div>
+                                    <div class="cart_sum-sum">
+                                        Итого <span>0 руб.</span>
+                                    </div>
+                                </div>
+                                <div class="cart_all">
+                                    <div class="cart_all-wrapper">
+                                       <a href="">ПЕРЕЙТИ В КОРЗИНУ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__bottom">
+                <div class="header__bottom-item">
+                    <a href="#">НОВИНКИ</a>
+                </div>
+                <div class="header__bottom-item">
+                    <a href="#">ЖЕНСКОЕ БЕЛЬЕ</a>
+                </div>
+                <div class="header__bottom-item">
+                    <a href="#">КОЛЛЕКЦИИ</a>
+                </div>
+                <div class="header__bottom-item">
+                    <a href="#">ПЛЯЖНАЯ ОДЕЖДА</a>
+                </div>
+                <div class="header__bottom-item">
+                    <a href="#">ДОМАШНЯЯ ОДЕЖДА</a>
+                </div>
+                <div class="header__bottom-item">
+                    <a href="#">РАСПРОДАЖА</a>
+                </div>
+            </div>
+        </div>
+
+        {% block content %}
+
+        {% endblock %}
+
+
+        <div class="footer">
+            <div class="footer__logo">
+                <div class="footer__logo-logo">
+                    <div class="footer__logo-logo-logo"><img src="{% static 'img/logo_footer.png' %}" alt=""></div>
+                    <div class="footer__logo-logo-description">Интернет-магазин<br>нижнего белья</div>
+                </div>
+                <div class="footer__logo-subscribe">
+                    <label>Введите Ваш E-mail</label>
+                    <form action=""><input type="text" class="subscribe_input" placeholder="Подписаться на рассылку"><input type="submit" value='Отправить' class="subscribe_submit"></form>
+                </div>
+                <div class="footer__logo-made">2021 © Сайт разработан компанией <a href="https://multitech.ru.com" _bl>MultiTech</a></div>
+            </div>
+            <div class="footer__catalog">
+                <div class="footer__catalog-title">
+                    <div class="footer__catalog-title__title">Информация</div>
+                    <div class="footer__catalog-title__under"></div>
+                </div>
+                <div class="footer__catalog-body">
+                    <div class="footer__catalog-body-item"><a href="{% url 'about' %}">О нас</a></div>
+                    <div class="footer__catalog-body-item"><a href="{% url 'advantage' %}">Преимущества</a></div>
+                    <div class="footer__catalog-body-item"><a href="{% url 'ytp' %}">УТП</a></div>
+                    <div class="footer__catalog-body-item"><a href="{% url 'contact' %}">Контакты</a></div>
+                    <div class="footer__catalog-body-item"><a href="{% url 'opt' %}">Оптовикам</a></div>
+                </div>
+            </div>
+            <div class="footer__info">
+                <div class="footer__info-title">
+                    <div class="footer__info-title__title">Помощь</div>
+                    <div class="footer__info-title__under"></div>
+                </div>
+                <div class="footer__info-body">
+                    <div class="footer__info-body-item"><a href="{% url 'servicerules' %}">Уход за материалами</a> </div>
+                    <div class="footer__info-body-item"><a href="{% url 'table' %}">Таблица размеров </a>               </div>
+                    <div class="footer__info-body-item"><a href="{% url 'policy' %}">Политика </a></div>
+                    <div class="footer__info-body-item"><a href="{% url 'requisites' %}">Реквизиты компании</a></div>
+                    <div class="footer__info-body-item"><a href="{% url 'return_and_exchange' %}">Обмен и возврат</a></div>
+                    <div class="footer__info-body-item"><a href="{% url 'warranty' %}">Гарантия на товар</a></div>
+                    <div class="footer__info-body-item"><a href="{% url 'delivery' %}">Доставка</a></div>
+                </div>
+            </div>
+            <div class="footer__subscribe-mob">
+                <label>Введите Ваш E-mail</label>
+                <form action=""><input type="text" class="subscribe_input" placeholder="Подписаться на рассылку"><input type="submit" value='Отправить' class="subscribe_submit"></form>
+
+            </div>
+            <div class="footer__about">
+                <div class="footer__about-wrapper">
+                    <div class="footer__about-item">
+                        <div class="footer__about-item-img"><img src="{% static 'img/phone_footer.png' %}" alt=""></div>
+                        <div class="footer__about-item-text phone">8 800 100-29-99</div>
+                    </div>
+                    <div class="footer__about-item">
+                        <div class="footer__about-item-img"><img src="{% static 'img/mail_footer.png' %}" alt=""></div>
+                        <div class="footer__about-item-text ">info.wear@email.com</div>
+                    </div>
+                    <div class="footer__about-item">
+                        <div class="footer__about-item-img"><img src="{% static 'img/place_footer.png' %}" alt=""></div>
+                        <div class="footer__about-item-text ">г. Москва, наб. Тараса Шевченко,<br> 23А</div>
+                    </div>
+                </div>
+                <div class="footer__about-social">
+                    <div class="footer__about-social-item"><a href=""><img src="{% static 'img/vk.png' %}" alt=""></a></div>
+                    <div class="footer__about-social-item"><a href=""><img src="{% static 'img/facebook.png' %}" alt=""></a></div>
+                    <div class="footer__about-social-item"><a href=""><img src="{% static 'img/instagram_footer.png' %}" alt=""></a></div>
+                </div>
+            </div>
+            <div class="footer__made-mob">
+                2021 © Сайт разработан компанией <a href="https://multitech.ru.com" _bl>MultiTech</a>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'main.js' %}" defer></script>
+        <!-- <script type="text/javascript" src="{% static 'basket.js' %}" defer></script> -->
+
+        {% block script %}
+
+        {% endblock %}
+    </body>
+</html>

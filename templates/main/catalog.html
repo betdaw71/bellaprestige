@@ -1,0 +1,606 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block static %}
+<link rel="stylesheet" href="{% static 'catalog.css' %}">
+{% endblock %}
+
+{% block content %}
+        <div class="nav">Главная - Женское белье</div>
+        <div class="title">Новинки</div>
+        <div class="digits">
+            <div class="digits__sort">
+                Сортировка: <span>По полупярности</span>
+            </div>
+            <div class="digits__show">
+                Показать на странице: <span>12</span>
+            </div>
+        </div>
+        <div class="main">
+            <div class="filter">
+                <div class="filter__title">
+                    <div class="filter__title-title">
+                        <div class="filter__title-title-icon"><img src="{% static 'img/filter.svg'%}" alt=""></div>
+                        <div class="filter__title-title-title">Фильтр</div>
+                    </div>
+                    <div class="filter__title-hide">
+                        <img src="img/arrow_down.svg" alt="">
+                    </div>
+                </div>
+                <div class="filter__price">
+                    <div class="filter__price-title">
+                        <div class="filter__price-title-title">Цена</div>
+                        <div class="filter__price-title-arrow"><img src="{% static 'img/arrow_down.svg'%}" alt=""></div>
+                    </div>
+                    <div class="filter__price-form">
+                        <div class="filter__price-form-from">
+                            <input type="text" placeholder="от">
+                        </div>
+                        <div class="filter__price-form-to">
+                            <input type="text" placeholder="до">
+                        </div>
+                    </div>
+                    <div class="filter__price-bar">
+                        <!-- <input type="range"> -->
+                        <section>
+                            <div class="rt-container">
+                                  <div class="col-rt-12">
+                                      <div class="Scriptcontent">
+                                      
+                                    <!-- Range Slider HTML -->
+                                          <div slider id="slider-distance">
+                                            <div>
+                                                <div inverse-left style="width:70%;"></div>
+                                                <div inverse-right style="width:70%;"></div>
+                                                <div range style="left:30%;right:40%;"></div>
+                                                <span thumb style="left:30%;"></span>
+                                                <span thumb style="left:60%;"></span>
+                                                <div sign style="left:30%;">
+                                                <span id="value">30</span>
+                                                </div>
+                                                <div sign style="left:60%;">
+                                                <span id="value">60</span>
+                                                </div>
+                                            </div>
+                                            <input type="range" tabindex="0" value="30" max="100" min="0" step="1" oninput="
+                                            this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
+                                            var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                                            var children = this.parentNode.childNodes[1].childNodes;
+                                            children[1].style.width=value+'%';
+                                            children[5].style.left=value+'%';
+                                            children[7].style.left=value+'%';children[11].style.left=value+'%';
+                                            children[11].childNodes[1].innerHTML=this.value;" />
+                                            
+                                            <input type="range" tabindex="0" value="60" max="100" min="0" step="1" oninput="
+                                            this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
+                                            var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                                            var children = this.parentNode.childNodes[1].childNodes;
+                                            children[3].style.width=(100-value)+'%';
+                                            children[5].style.right=(100-value)+'%';
+                                            children[9].style.left=value+'%';children[13].style.left=value+'%';
+                                            children[13].childNodes[1].innerHTML=this.value;" />
+                                            </div>
+                                          <!-- End Range Slider HTML -->                                   
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="filter__category">
+                    <div class="filter__category-title">
+                        <div class="filter__category-title-title">Категории</div>
+                        <div class="filter__category-title-arrow"><img src="{% static 'img/arrow_down.svg'%}" alt=""></div>
+                    </div>
+                    <div class="filter__category-body">
+                        <div class="filter__category-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    <label>Коллекции</label>
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__category-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__category-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__category-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter__color">
+                    <div class="filter__color-title">
+                        <div class="filter__color-title-title">Цвета</div>
+                        <div class="filter__color-title-arrow"><img src="{% static 'img/arrow_down.svg'%}" alt=""></div>
+                    </div>
+                    <div class="filter__color-body">
+                        <div class="filter__color-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__color-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__color-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__color-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter__size">
+                    <div class="filter__size-title">
+                        <div class="filter__size-title-title">Размера</div>
+                        <div class="filter__size-title-arrow"><img src="{% static 'img/arrow_down.svg'%}" alt=""></div>
+                    </div>
+                    <div class="filter__size-body">
+                        <div class="filter__size-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__size-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__size-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__size-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter__brand">
+                    <div class="filter__brand-title">
+                        <div class="filter__brand-title-title">Бренд</div>
+                        <div class="filter__brand-title-arrow"><img src="{% static 'img/arrow_down.svg' %}" alt=""></div>
+                    </div>
+                    <div class="filter__brand-body">
+                        <div class="filter__brand-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__brand-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__brand-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                        <div class="filter__brand-body__item">
+                            <div class="item-title">
+                                <div class="item-title__radio">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="item-title__title">
+                                    Коллекции
+                                </div>
+                            </div>
+                            <div class="item-count">1333</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog catalog2">
+                <div class="item" id='1'>
+                    <div class="item__img"><img src="{% static 'img/item/item1.png' %}" alt=""></div>
+                    <div class="item__title">Бюстгальтер - push-up </div>
+                    <div class="item__info">
+                        <div class="item__info-price"><span>1 199</span> руб.</div>
+                        <div class="item__info-tools">
+                            <div class="item__info-tools__like"><img src="{% static 'img/like.svg' %}" alt=""></div>
+                            <div class="item__info-tools__cart"><img src="{% static 'img/cart.svg' %}" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="item__digits">
+                        <div class="item__digits-color">
+                            <div class="item__digits-color__item"  data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item active" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                        </div>
+                        <div class="item__digits-size">
+                            <div class="item__digits-size__item">44</div>
+                            <div class="item__digits-size__item">45</div>
+                            <div class="item__digits-size__item active">46</div>
+                            <div class="item__digits-size__item">47</div>
+                            <div class="item__digits-size__item">48</div>
+                            <div class="item__digits-size__item">49</div>
+                        </div>
+                        <div class="item__digits-cart">
+                            <div class="cart__count">
+                                <div class="cart__count-plus">+</div>
+                                <div class="cart__count-count">1</div>
+                                <div class="cart__count-minus">-</div>
+                            </div>
+                            <div class="cart__btn">
+                                <div class="btn__wrapper">
+                                    В корзину
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id='2'>
+                    <div class="item__img"><img src="{% static 'img/item/item1.png' %}" alt=""></div>
+                    <div class="item__title">Бюстгальтер - push-up </div>
+                    <div class="item__info">
+                        <div class="item__info-price"><span>1 199</span> руб.</div>
+                        <div class="item__info-tools">
+                            <div class="item__info-tools__like"><img src="{% static 'img/like.svg' %}" alt=""></div>
+                            <div class="item__info-tools__cart"><img src="{% static 'img/cart.svg' %}" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="item__digits">
+                        <div class="item__digits-color">
+                            <div class="item__digits-color__item"  data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item active" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                        </div>
+                        <div class="item__digits-size">
+                            <div class="item__digits-size__item">44</div>
+                            <div class="item__digits-size__item">45</div>
+                            <div class="item__digits-size__item active">46</div>
+                            <div class="item__digits-size__item">47</div>
+                            <div class="item__digits-size__item">48</div>
+                            <div class="item__digits-size__item">49</div>
+                        </div>
+                        <div class="item__digits-cart">
+                            <div class="cart__count">
+                                <div class="cart__count-plus">+</div>
+                                <div class="cart__count-count">1</div>
+                                <div class="cart__count-minus">-</div>
+                            </div>
+                            <div class="cart__btn">
+                                <div class="btn__wrapper">
+                                    В корзину
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id='3'>
+                    <div class="item__img"><img src="{% static 'img/item/item1.png' %}" alt=""></div>
+                    <div class="item__title">Бюстгальтер - push-up </div>
+                    <div class="item__info">
+                        <div class="item__info-price"><span>1 199</span> руб.</div>
+                        <div class="item__info-tools">
+                            <div class="item__info-tools__like"><img src="{% static 'img/like.svg' %}" alt=""></div>
+                            <div class="item__info-tools__cart"><img src="{% static 'img/cart.svg' %}" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="item__digits">
+                        <div class="item__digits-color">
+                            <div class="item__digits-color__item"  data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item active" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                        </div>
+                        <div class="item__digits-size">
+                            <div class="item__digits-size__item">44</div>
+                            <div class="item__digits-size__item">45</div>
+                            <div class="item__digits-size__item active">46</div>
+                            <div class="item__digits-size__item">47</div>
+                            <div class="item__digits-size__item">48</div>
+                            <div class="item__digits-size__item">49</div>
+                        </div>
+                        <div class="item__digits-cart">
+                            <div class="cart__count">
+                                <div class="cart__count-plus">+</div>
+                                <div class="cart__count-count">1</div>
+                                <div class="cart__count-minus">-</div>
+                            </div>
+                            <div class="cart__btn">
+                                <div class="btn__wrapper">
+                                    В корзину
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id='4'>
+                    <div class="item__img"><img src="{% static 'img/item/item1.png' %}" alt=""></div>
+                    <div class="item__title">Бюстгальтер - push-up </div>
+                    <div class="item__info">
+                        <div class="item__info-price"><span>1 199</span> руб.</div>
+                        <div class="item__info-tools">
+                            <div class="item__info-tools__like"><img src="{% static 'img/like.svg' %}" alt=""></div>
+                            <div class="item__info-tools__cart"><img src="{% static 'img/cart.svg' %}" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="item__digits">
+                        <div class="item__digits-color">
+                            <div class="item__digits-color__item"  data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item active" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                        </div>
+                        <div class="item__digits-size">
+                            <div class="item__digits-size__item">44</div>
+                            <div class="item__digits-size__item">45</div>
+                            <div class="item__digits-size__item active">46</div>
+                            <div class="item__digits-size__item">47</div>
+                            <div class="item__digits-size__item">48</div>
+                            <div class="item__digits-size__item">49</div>
+                        </div>
+                        <div class="item__digits-cart">
+                            <div class="cart__count">
+                                <div class="cart__count-plus">+</div>
+                                <div class="cart__count-count">1</div>
+                                <div class="cart__count-minus">-</div>
+                            </div>
+                            <div class="cart__btn">
+                                <div class="btn__wrapper">
+                                    В корзину
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id='5'>
+                    <div class="item__img"><img src="{% static 'img/item/item1.png' %}" alt=""></div>
+                    <div class="item__title">Бюстгальтер - push-up </div>
+                    <div class="item__info">
+                        <div class="item__info-price"><span>1 199</span> руб.</div>
+                        <div class="item__info-tools">
+                            <div class="item__info-tools__like"><img src="{% static 'img/like.svg' %}" alt=""></div>
+                            <div class="item__info-tools__cart"><img src="{% static 'img/cart.svg' %}" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="item__digits">
+                        <div class="item__digits-color">
+                            <div class="item__digits-color__item"  data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item active" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                        </div>
+                        <div class="item__digits-size">
+                            <div class="item__digits-size__item">44</div>
+                            <div class="item__digits-size__item">45</div>
+                            <div class="item__digits-size__item active">46</div>
+                            <div class="item__digits-size__item">47</div>
+                            <div class="item__digits-size__item">48</div>
+                            <div class="item__digits-size__item">49</div>
+                        </div>
+                        <div class="item__digits-cart">
+                            <div class="cart__count">
+                                <div class="cart__count-plus">+</div>
+                                <div class="cart__count-count">1</div>
+                                <div class="cart__count-minus">-</div>
+                            </div>
+                            <div class="cart__btn">
+                                <div class="btn__wrapper">
+                                    В корзину
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" id='6'>
+                    <div class="item__img"><img src="{% static 'img/item/item1.png' %}" alt=""></div>
+                    <div class="item__title">Бюстгальтер - push-up </div>
+                    <div class="item__info">
+                        <div class="item__info-price"><span>1 199</span> руб.</div>
+                        <div class="item__info-tools">
+                            <div class="item__info-tools__like"><img src="{% static 'img/like.svg' %}" alt=""></div>
+                            <div class="item__info-tools__cart"><img src="{% static 'img/cart.svg' %}" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="item__digits">
+                        <div class="item__digits-color">
+                            <div class="item__digits-color__item"  data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item active" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item">
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                            <div class="item__digits-color__item" data-color='Розоый'>
+                                <div class="color__item-wrapper" style="background-color: #333;"></div>
+                            </div>
+                        </div>
+                        <div class="item__digits-size">
+                            <div class="item__digits-size__item">44</div>
+                            <div class="item__digits-size__item">45</div>
+                            <div class="item__digits-size__item active">46</div>
+                            <div class="item__digits-size__item">47</div>
+                            <div class="item__digits-size__item">48</div>
+                            <div class="item__digits-size__item">49</div>
+                        </div>
+                        <div class="item__digits-cart">
+                            <div class="cart__count">
+                                <div class="cart__count-plus">+</div>
+                                <div class="cart__count-count">1</div>
+                                <div class="cart__count-minus">-</div>
+                            </div>
+                            <div class="cart__btn">
+                                <div class="btn__wrapper">
+                                    В корзину
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+
+
+
+

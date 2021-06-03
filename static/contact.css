@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'ProbaPro-ExtraLight'; 
+    src: url("./fonts/ProbaPro-ExtraLight.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Light'; 
+    src: url("./fonts/ProbaPro-Light.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Regular'; 
+    src: url("./fonts/ProbaPro-Regular.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Medium'; 
+    src: url("./fonts/ProbaPro-Medium.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-SemiBold'; 
+    src: url("./fonts/ProbaPro-SemiBold.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Bold'; 
+    src: url("./fonts/ProbaPro-Bold.ttf") format("truetype"); 
+}
+
+.contact-body__main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vw;
+}
+.contact-body__main-item-title{
+    color: #868686;
+    font-family: 'ProbaPro-Regular'; 
+    font-size: 0.8vw;
+    margin-bottom: 0.5vw;
+}
+.contact-body__main-item-body{
+    font-family: 'ProbaPro-Regular'; 
+    color: #333333;
+    font-size: 1vw;
+}
+.contact-body-social{
+    display: flex;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+.contact-body-social__item{
+    padding: 0.7vw;
+				border-radius: 50%;
+				margin-right: 1vw;
+				background-color: #fff;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+}
+/* .contact-body-social__item img{
+    width: 2vw;
+    height: 2vw;
+    object-fit: contain;
+} */
+.contact-body__under{
+    color: #868686;
+    font-family: 'ProbaPro-Regular'; 
+    font-size:1vw;
+    margin-bottom: 2vw;
+}
+.contact-body__btn{
+    margin-bottom: 5vw;
+    font-family: 'ProbaPro-Regular'; 
+}
+.contact-body__btn-wrapper{
+    display: inline-block;
+    padding: 0.5vw;
+    border: 0.1vw solid black;
+}
+.contact-body__btn-wrapper:hover{
+    transition: 0.2s;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+.contact-form{
+    z-index:4;
+    position: fixed;
+    top:0px;
+    width: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,0.5);
+    
+    display: none;
+}
+.contact-form-inner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-form__wrapper{
+    width: 20vw;
+    background-color: white;
+    border-radius: 0.3vw;
+    border: 0.2vw solid #DCAB96;
+    padding: 3vw;
+    font-family: 'ProbaPro-Regular'; 
+}
+.contact-form-close{
+    width: 98%;
+    text-align: right;
+    padding-right: 2vw;
+    padding-top:2%;
+    margin-bottom: 1vw;
+}
+.contact-form-close img{
+    width: 1vw;
+    height: 1vw;
+}
+.contact-form-close:hover{
+    cursor: pointer;
+}
+.contact-form__input{
+margin-bottom: 1vw;
+}
+.contact-form__input div{
+    margin-bottom: 0.3vw;
+    font-size: 1vw;
+}
+.contact-form__input input{
+    width: 100%;
+    border: 0.1vw solid #e4e4e4;
+    background-color: #fafafa;
+    font-size: 1vw;
+    padding:0.3vw;
+    padding-left: 0.4vw;
+    padding-right: 0.4vw;
+    
+}
+.contact-form__input textarea{
+    width: 100%;
+    border: 0.1vw solid #e4e4e4;
+    background-color: #fafafa;
+    font-size: 1vw;
+    padding:0.3vw;
+    padding-left: 0.4vw;
+    padding-right: 0.4vw;   
+}
+
+.contact-form__submit{
+    width: 100%;
+    margin-top: 1vw;
+}
+.contact-form__submit input{
+    background-color: #DCAB96;
+    width: 100%;
+    text-align: center;
+    padding:0.8vw;
+    border: none;
+    color: white;
+    font-family: 'ProbaPro-Regular';
+    font-size: 1vw;
+}
+.contact-form__submit input:hover{
+    background-color: #e09f83;
+    cursor: pointer;
+}

@@ -1,0 +1,440 @@
+@font-face {
+    font-family: 'ProbaPro-ExtraLight'; 
+    src: url("./fonts/ProbaPro-ExtraLight.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Light'; 
+    src: url("./fonts/ProbaPro-Light.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Regular'; 
+    src: url("./fonts/ProbaPro-Regular.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Medium'; 
+    src: url("./fonts/ProbaPro-Medium.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-SemiBold'; 
+    src: url("./fonts/ProbaPro-SemiBold.ttf") format("truetype"); 
+}
+@font-face {
+    font-family: 'ProbaPro-Bold'; 
+    src: url("./fonts/ProbaPro-Bold.ttf") format("truetype"); 
+}
+
+$main:#DCAB96;
+$background:#FBF6F3;
+$textlight:#868686;
+$textdefault:#333333;
+$textlight2:#979493;
+.nav{
+    padding-left: 15%;
+    color: $textlight;
+    font-family: 'ProbaPro-Regular';
+    font-size: 0.8vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.title{
+    font-family: 'ProbaPro-Regular';
+    padding-left:33%;
+    color: $textdefault;
+    text-transform: uppercase;
+    font-size: 1.5vw;
+}
+
+.digits{
+    padding-left: 33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15%;
+    font-family: 'ProbaPro-Regular';
+    margin-top:1vw;
+    color: $textlight2;
+    font-size: 1vw;
+    span{
+        color: $main;
+    }
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    .filter{
+        font-family: 'ProbaPro-Regular';
+        width: 22%;
+        padding:1%;
+        background-color: white;
+        display: inline-block;
+        height: auto;
+        position: relative;
+        .filter__title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1vw;
+            .filter__title-title{
+                display: flex;
+                align-items: center;
+                color: $textdefault;
+                font-family: "ProbaPro-Semibold";
+                div{
+                    margin-right: 0.5vw;
+                    font-size: 1.2vw;
+                }
+            }
+        }
+        .filter__price{
+            margin-bottom: 0.7vw;
+            .filter__price-title{
+                color: $textdefault;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.1vw;
+                margin-bottom: 0.5vw;
+            }
+            .filter__price-form{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.5vw;
+                .filter__price-form-from{
+                    width: 45%;
+                    input{
+                        width: 100%;
+                        background-color: #FBF6F3;
+                        border: none;
+                        padding: 0.5vw;
+                        &::-webkit-input-placeholder {color:#DCAB96;}
+                    }
+                }
+                .filter__price-form-to{
+                    width:45%;
+                    input{
+                        width: 100%;
+                        background-color: #FBF6F3;
+                        border: none;
+                        padding: 0.5vw;
+                        &::-webkit-input-placeholder {color:#DCAB96;}
+                    }
+                }
+            }
+            .filter__price-bar{
+                input{
+                    width: 100%;
+                }
+                body {
+                    background-color: #666;
+                    margin: 100px 50px;
+                  }
+                  
+                  [slider] {
+                    position: relative;
+                    height: 14px;
+                    border-radius: 10px;
+                    text-align: left;
+                    margin: 45px 0 10px 0;
+                  }
+                  
+                  [slider] > div {
+                    position: absolute;
+                    left: 13px;
+                    right: 15px;
+                    height: 14px;
+                  }
+                  
+                  [slider] > div > [inverse-left] {
+                    position: absolute;
+                    left: 0;
+                    height: 14px;
+                    border-radius: 10px;
+                    background-color: #CCC;
+                    margin: 0 7px;
+                  }
+                  
+                  [slider] > div > [inverse-right] {
+                    position: absolute;
+                    right: 0;
+                    height: 14px;
+                    border-radius: 10px;
+                    background-color: #CCC;
+                    margin: 0 7px;
+                  }
+                  
+                  [slider] > div > [range] {
+                    position: absolute;
+                    left: 0;
+                    height: 14px;
+                    border-radius: 14px;
+                    background-color: #1ABC9C;
+                  }
+                  
+                  [slider] > div > [thumb] {
+                    position: absolute;
+                    top: -7px;
+                    z-index: 2;
+                    height: 28px;
+                    width: 28px;
+                    text-align: left;
+                    margin-left: -11px;
+                    cursor: pointer;
+                    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+                    background-color: #FFF;
+                    border-radius: 50%;
+                    outline: none;
+                  }
+                  
+                  [slider] > input[type=range] {
+                    position: absolute;
+                    pointer-events: none;
+                    -webkit-appearance: none;
+                    z-index: 3;
+                    height: 14px;
+                    top: -2px;
+                    width: 100%;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                    filter: alpha(opacity=0);
+                    -moz-opacity: 0;
+                    -khtml-opacity: 0;
+                    opacity: 0;
+                  }
+                  
+                  div[slider] > input[type=range]::-ms-track {
+                    -webkit-appearance: none;
+                    background: transparent;
+                    color: transparent;
+                  }
+                  
+                  div[slider] > input[type=range]::-moz-range-track {
+                    -moz-appearance: none;
+                    background: transparent;
+                    color: transparent;
+                  }
+                  
+                  div[slider] > input[type=range]:focus::-webkit-slider-runnable-track {
+                    background: transparent;
+                    border: transparent;
+                  }
+                  
+                  div[slider] > input[type=range]:focus {
+                    outline: none;
+                  }
+                  
+                  div[slider] > input[type=range]::-ms-thumb {
+                    pointer-events: all;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 0px;
+                    border: 0 none;
+                    background: red;
+                  }
+                  
+                  div[slider] > input[type=range]::-moz-range-thumb {
+                    pointer-events: all;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 0px;
+                    border: 0 none;
+                    background: red;
+                  }
+                  
+                  div[slider] > input[type=range]::-webkit-slider-thumb {
+                    pointer-events: all;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 0px;
+                    border: 0 none;
+                    background: red;
+                    -webkit-appearance: none;
+                  }
+                  
+                  div[slider] > input[type=range]::-ms-fill-lower {
+                    background: transparent;
+                    border: 0 none;
+                  }
+                  
+                  div[slider] > input[type=range]::-ms-fill-upper {
+                    background: transparent;
+                    border: 0 none;
+                  }
+                  
+                  div[slider] > input[type=range]::-ms-tooltip {
+                    display: none;
+                  }
+                  
+                  [slider] > div > [sign] {
+                    opacity: 0;
+                    position: absolute;
+                    margin-left: -11px;
+                    top: -39px;
+                    z-index:3;
+                    background-color: #1ABC9C;
+                    color: #fff;
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 28px;
+                    -webkit-border-radius: 28px;
+                    align-items: center;
+                    -webkit-justify-content: center;
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  
+                  [slider] > div > [sign]:after {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    border-radius: 16px;
+                    top: 19px;
+                    border-left: 14px solid transparent;
+                    border-right: 14px solid transparent;
+                    border-top-width: 16px;
+                    border-top-style: solid;
+                    border-top-color: #1ABC9C;
+                  }
+                  
+                  [slider] > div > [sign] > span {
+                    font-size: 12px;
+                    font-weight: 700;
+                    line-height: 28px;
+                  }
+                  
+                  [slider]:hover > div > [sign] {
+                    opacity: 1;
+                  }
+            }
+        }
+        .filter__category{
+            border-top: 0.2vw solid #FBF6F3;
+            padding-top: 1vw;
+            .filter__category-title{
+                color: $textdefault;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.1vw;
+                margin-bottom: 0.5vw;
+            }
+            .filter__category-body{
+                .filter__category-body__item{
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 0.3vw;
+                    .item-title{
+                        display: flex;
+                        align-items: center;
+                        font-family: 'ProbaPro-Light'; 
+                        font-size: 1vw;
+                        color: $textdefault;
+                    }
+                    .item-count{
+                        color: #B9B9B9;
+                        font-size: 0.8vw;
+                    }
+                }
+            }   
+        }
+        .filter__color{
+            border-top: 0.2vw solid #FBF6F3;
+            padding-top: 1vw;
+            .filter__color-title{
+                color: $textdefault;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.1vw;
+                margin-bottom: 0.5vw;
+            }
+            .filter__color-body{
+                .filter__color-body__item{
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 0.3vw;
+                    .item-title{
+                        display: flex;
+                        align-items: center;
+                        font-family: 'ProbaPro-Light'; 
+                        font-size: 1vw;
+                        color: $textdefault;
+                    }
+                    .item-count{
+                        color: #B9B9B9;
+                        font-size: 0.8vw;
+                    }
+                }
+            }  
+        }
+        .filter__size{
+            border-top: 0.2vw solid #FBF6F3;
+            padding-top: 1vw;
+            .filter__size-title{
+                color: $textdefault;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.1vw;
+                margin-bottom: 0.5vw;
+            }
+            .filter__size-body{
+                .filter__size-body__item{
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 0.3vw;
+                    .item-title{
+                        display: flex;
+                        align-items: center;
+                        font-family: 'ProbaPro-Light'; 
+                        font-size: 1vw;
+                        color: $textdefault;
+                    }
+                    .item-count{
+                        color: #B9B9B9;
+                        font-size: 0.8vw;
+                    }
+                }
+            }  
+        }
+        .filter__brand{
+            border-top: 0.2vw solid #FBF6F3;
+            padding-top: 1vw;
+            .filter__brand-title{
+                color: $textdefault;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.1vw;
+                margin-bottom: 0.5vw;
+            }
+            .filter__brand-body{
+                .filter__brand-body__item{
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 0.3vw;
+                    .item-title{
+                        display: flex;
+                        align-items: center;
+                        font-family: 'ProbaPro-Light'; 
+                        font-size: 1vw;
+                        color: $textdefault;
+                    }
+                    .item-count{
+                        color: #B9B9B9;
+                        font-size: 0.8vw;
+                    }
+                }
+            }  
+        }
+    }
+    .catalog{
+        width: 75.1%;
+    }
+}
+
+

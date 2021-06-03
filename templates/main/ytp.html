@@ -1,0 +1,142 @@
+
+    {% extends 'base.html' %}
+    {% load static %}
+    
+    {% block static %}
+    <link rel="stylesheet" href="{% static 'requisites.css'%}">
+    <link rel="stylesheet" href="{% static 'about.css'%}">
+    <style>
+              .opt-title{
+                color: #333333;
+                font-family: 'ProbaPro-ExtraLight'; 
+                font-size: 1.3vw;
+                margin-bottom:2vw;
+                text-align: center;
+                width: 50%;
+                /* margin-top: 2vw; */
+            }
+            .opt-title a{
+                color: #DCAB96;
+            }
+            .btn-opt{
+                margin-bottom: 5vw;
+                font-family: 'ProbaPro-Regular'; 
+            }
+            .btn-opt-wrapper{
+                display: inline-block;
+                padding: 0.5vw;
+                border: 0.1vw solid black;
+            }
+            .btn-opt-wrapper:hover{
+                transition: 0.2s;
+                background-color: black;
+                color: white;
+                cursor: pointer;
+            }
+            .btn-opt a{
+                color: #333333;
+            }
+            .contact-form-body{
+                width: 40%;
+                background-color: white;
+    border-radius: 0.3vw;
+    border: 0.1vw solid #DCAB96;
+    padding: 3vw;
+    font-family: 'ProbaPro-Regular'; 
+            }
+            .contact-form__input{
+margin-bottom: 1vw;
+
+}
+.contact-form__input div{
+    margin-bottom: 0.3vw;
+    font-size: 1vw;
+}
+.contact-form__input input{
+    width: 100%;
+    border: 0.1vw solid #e4e4e4;
+    background-color: #fafafa;
+    font-size: 1vw;
+    padding:0.3vw;
+    padding-left: 0.4vw;
+    padding-right: 0.4vw;
+    
+}
+.contact-form__input textarea{
+    width: 100%;
+    border: 0.1vw solid #e4e4e4;
+    background-color: #fafafa;
+    font-size: 1vw;
+    padding:0.3vw;
+    padding-left: 0.4vw;
+    padding-right: 0.4vw;   
+}
+
+.contact-form__submit{
+    width: 100%;
+    margin-top: 1vw;
+}
+.contact-form__submit input{
+    background-color: #DCAB96;
+    width: 100%;
+    text-align: center;
+    padding:0.8vw;
+    border: none;
+    color: white;
+    font-family: 'ProbaPro-Regular';
+    font-size: 1vw;
+}
+.contact-form__submit input:hover{
+    background-color: #e09f83;
+    cursor: pointer;
+}
+    </style>
+    {% endblock %}
+    
+    {% block content %}
+
+
+
+        <div class="nav">Главная — Информация — УТП
+        </div>
+        <div class="title">Уникальное торговое предложение
+        </div>
+
+        <div class="body-help">
+            <div class="help_side">
+                <a href="{% url 'about' %}"><div class="help_side-item ">О кампании</div></a>
+                <a href="{% url 'advantage' %}"><div class="help_side-item ">Преимущества</div></a>
+                <a href="{% url 'ytp' %}"><div class="help_side-item active">Уникальное торговое предложение (УТП)</div></a>
+                <a href="{% url 'contact' %}"><div class="help_side-item ">Контакты</div></a>
+                <a href="{% url 'opt' %}"><div class="help_side-item ">Оптовикам</div></a>
+            </div>
+            <div class="help_body" style="font-family: 'ProbaPro-Regular'; color: #868686;font-size: 1vw;margin-bottom: 10vw;">
+                
+                <div class="opt-title"> Если вы соответсвуете всем требованиям для сотрудничества(можете ознакомиться <a href="">здесь</a>), то оставляйте свои контакты и мы составим для вас уникальное торговое предложение</div>
+                <div class="contact-form-body">
+                    <div class="contact-form__input">
+                        <div><label for="">Ваше имя</label></div>
+                        <input type="text">
+                    </div>
+                    <div class="contact-form__input">
+                        <div><label for="">Телефон </label></div>
+                        <input type="text">
+                    </div>
+                    <div class="contact-form__input">
+                        <div><label for="">E-mail</label></div>
+                        <input type="text">
+                    </div>
+                    <div class="contact-form__input">
+                        <div><label for="">Сообщение</label></div>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="contact-form__submit">
+                        <input type="submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        {% endblock %}

@@ -1,0 +1,77 @@
+
+    {% extends 'base.html' %}
+    {% load static %}
+    
+    {% block static %}
+    <link rel="stylesheet" href="{% static 'requisites.css'%}">
+    <link rel="stylesheet" href="{% static 'about.css'%}">
+    <style>
+        .opt-title{
+            color: #333333;
+            font-family: 'ProbaPro-Regular'; 
+            font-size: 1.5vw;
+            margin-bottom:1vw;
+            margin-top: 2vw;
+        }
+        .btn-opt{
+            margin-bottom: 5vw;
+            font-family: 'ProbaPro-Regular'; 
+        }
+        .btn-opt-wrapper{
+            display: inline-block;
+            padding: 0.5vw;
+            border: 0.1vw solid black;
+        }
+        .btn-opt-wrapper:hover{
+            transition: 0.2s;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+        .btn-opt a{
+            color: #333333;
+        }
+    </style>
+    {% endblock %}
+    
+    {% block content %}
+
+        <div class="nav">Главная — Информация — Оптовикам
+        </div>
+        <div class="title">Оптовикам
+        </div>
+
+        <div class="body-help">
+            <div class="help_side">
+                <a href="{% url 'about' %}"><div class="help_side-item ">О кампании</div></a>
+                <a href="{% url 'advantage' %}"><div class="help_side-item ">Преимущества</div></a>
+                <a href="{% url 'ytp' %}"><div class="help_side-item ">Уникальное торговое предложение (УТП)</div></a>
+                <a href="{% url 'contact' %}"><div class="help_side-item ">Контакты</div></a>
+                <a href="{% url 'opt' %}"><div class="help_side-item active">Оптовикам</div></a>
+            </div>
+            <div class="help_body" style="font-family: 'ProbaPro-Regular'; color: #868686;font-size: 1vw;margin-bottom: 10vw;">
+
+               
+                
+                За 5 лет партнерская сеть под логотипом торговой марки Bella-Prestige заняла уверенные позиции в 85 городах России и СНГ.
+
+                
+                <div class="opt-title"> Минимальные требования к для оптовой закупки</div>
+                — Минимальная торговая площадь — 150 м². Рекомендуемая 200-300 м²
+                — Месторасположение магазина — отдельно стоящий магазин на одной из центральных улиц города или торговый центр с концептуальными магазинами и высокой проходимостью
+                — Установка единого программного продукта для решения задач эффективного управления магазинами
+                — Фирменное оборудование (торговое, световое оборудование, пол, декоративные элементы, программный продукт)
+                — Единая ценовая политика
+                <div class="opt-title">Мы составим для вас уникальное торговое предложение</div>
+                <div class="btn-opt"><a href="">
+                    <div class="btn-opt-wrapper">
+                        Начать сотрудничество
+                    </div></a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        {% endblock %}
